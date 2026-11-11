@@ -3,10 +3,28 @@ package com.example.NutreAPP.models;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity 
+@Table (name = "visualizacion")
+
 public class Visualizacion {
+
+@Id 
+@GeneratedValue (strategy = GenerationType.UUID)
  private UUID id;
+
+ @Column (name = "fecha_visualizacion", nullable = false, unique = false)
  private LocalDate fecha_visualizacion;
+
+ @Column (name = "completado", nullable = false, unique = false)
  private Boolean completado;
+
  public Visualizacion() {
  }
  public Visualizacion(UUID id, LocalDate fecha_visualizacion, Boolean completado) {
