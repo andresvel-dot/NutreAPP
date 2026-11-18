@@ -1,7 +1,19 @@
 package com.example.NutreAPP.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.NutreAPP.models.Video;
+import com.example.NutreAPP.repositories.IVideo;
+
+@Service 
 public class VideoServicio {
 
+   @Autowired 
+   private IVideo repositorio;
+
+   public Video guardar (Video datos){
+     return this.repositorio.save(datos);
+   }
       //Metodo para guardar
 
     //Metodo para buscar por id
