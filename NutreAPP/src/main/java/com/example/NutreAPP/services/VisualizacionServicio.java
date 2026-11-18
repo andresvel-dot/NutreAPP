@@ -43,9 +43,16 @@ public class VisualizacionServicio {
       return this.repositorio.findAll();
     }
 
-    //Metodo para modificar
-
     //Metodo para eliminar
+    public boolean eliminar (UUID id){
+          Optional<Visualizacion> visualizacionBuscado = this.repositorio.findById(id);
+        if (!visualizacionBuscado.isPresent()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Id no encontrado");
+        } else {
+            this.repositorio.deleteById(id);
+            return true;
+        }
+    }
 
     //Metodo para buscar por fecha de visualizacion
     
