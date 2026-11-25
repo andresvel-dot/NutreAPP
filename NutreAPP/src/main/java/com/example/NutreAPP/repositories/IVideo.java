@@ -12,14 +12,15 @@ import com.example.NutreAPP.models.Video;
 public interface IVideo extends JpaRepository <Video, UUID> {
 
 List<Video> findByCategoria(String categoria);
+
 List<Video> findByTituloContainingIgnoreCase(String titulo);
 
 Optional <Video> findByDescripcion(String descripcion);
 
 List <Video> findByUrl(String url);
 
+Boolean existsByUrl (String url);
+
 List <Video> findByTituloAndCategoria(String titulo, String categoria);
-
-
 
 }

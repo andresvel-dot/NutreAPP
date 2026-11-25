@@ -17,7 +17,7 @@ public interface IUsuarioRepositorio extends JpaRepository <Usuario,UUID>{
     //Consultas prefabricadas (BUSCAR)
 
     //1. Buscar un usuario asociado a un departamento y a un rol en especifico
-    List<Usuario> findByDepartamentoAndRol(String departamento, String rol);
+    Optional<Usuario> findByDepartamentoAndRol(String departamento, String rol);
     
     Optional<Usuario> findByCorreo(String correo);
 
